@@ -16,7 +16,7 @@ body{
     top: 0;
     left: 0;
     z-index: -2;
-    background-image: url(../img/Hoạtiết.png);
+    background-image: url(../img/Hoạ_tiết.png);
     background-size: 100%;
 }
 @media screen and (max-width: 800px) {
