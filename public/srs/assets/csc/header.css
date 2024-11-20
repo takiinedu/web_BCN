@@ -11,6 +11,7 @@ body {
     z-index: 2;
 
 }
+
 .header .wrapper {
     position: relative;
     width: 100%;
@@ -26,7 +27,7 @@ header .nav {
 
 .header .nav li a {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     text-decoration: none;
     font-family: 'Roboto';
     font-style: normal;
@@ -61,7 +62,8 @@ header .nav {
     width: calc(100% - 1400px);
     border-bottom: 2px solid #ffffff;
 }
-.header .backg{
+
+.header .backg {
     width: 100%;
     z-index: 0;
     height: 108px;
@@ -70,6 +72,7 @@ header .nav {
     left: 0;
     background: #eae9ee;
 }
+
 .header .bg2 {
     position: absolute;
     top: 0;
@@ -119,12 +122,4 @@ header .nav {
 
 .search-box input::placeholder {
     color: #9E9E9E;
-}
-.section2{
-    width: calc(100% - 36 * 2px);
-    margin: 339px auto 0 auto;
-}
-.section2__title{
-    width: 100%;
-    text-align: center;
 }
