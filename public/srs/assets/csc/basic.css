@@ -18,6 +18,8 @@ body{
     z-index: -2;
     background-image: url(../img/Hoạ_tiết.png);
     background-size: 100%;
+    opacity: 0.7;
+    filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
 }
 @media screen and (max-width: 800px) {
     body{

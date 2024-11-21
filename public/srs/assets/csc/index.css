@@ -127,6 +127,11 @@
     left: 50%;
     top: 50%;
     padding: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.section1-right .avatar:hover svg{
+    rotate: -90deg;
 }
 
 .avatar img {
@@ -138,6 +143,7 @@
     width: 105px;
     height: 105px;
     border: 50%;
+    z-index: -1;
 }
 
 .section__title {
