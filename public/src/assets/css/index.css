@@ -1,0 +1,320 @@
+.homepage {
+    width: 100%;
+    height: 100%;
+
+}
+
+.homepage .header {
+    min-width: 1440px;
+    width: 100%;
+    height: 108px;
+}
+
+body {
+    height: 100vh;
+    min-height: 750px;
+    background: var(--background);
+}
+
+.homepage .header .wrapper {
+    position: relative;
+    margin: auto;
+    width: calc(100% - 64px);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage .header .nav {
+    display: flex;
+    gap: 24px;
+    padding: 16px 32px;
+}
+
+.homepage .header .nav li {
+    justify-content: center;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 12px 8px;
+}
+
+.homepage .header .nav a {
+    transition: 0.5s;
+    text-decoration: none;
+    height: 20px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.001em;
+    color: var(--text-title-default);
+}
+
+.homepage .header .nav a:hover {
+    color: var(--accent);
+}
+
+.homepage .header .right {
+    display: flex;
+    align-items: center;
+}
+
+.homepage .header .search-box {
+    position: relative;
+    padding-top: 4px;
+}
+
+.homepage .header .search-box svg:nth-child(2) {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+}
+
+.homepage .header .search-box svg:nth-child(2):hover path {
+    fill: var(--accent);
+}
+
+.homepage .header .search-box input {
+    outline: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+    width: 295px;
+    height: calc(100% - 10px);
+    border: none;
+    background: transparent;
+    padding-inline: 25px 6px;
+    box-sizing: border-box;
+    border-radius: 50px 0 0 50px;
+}
+
+.homepage .header .nav #home {
+    color: var(--accent);
+}
+
+.homepage .header .wrapper .avarta {
+    position: relative;
+    width: 70px;
+    height: 66px;
+    margin-inline: 10px;
+}
+
+.homepage .header .wrapper .avarta:hover .border_icon {
+    opacity: 1;
+    transition: 2s;
+    animation: rotate 1s linear infinite;
+}
+.homepage .header .wrapper .avarta:hover .icon path{
+    fill: var(--accent);
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.homepage .header .wrapper .icon {
+    position: absolute;
+    right: -10px;
+}
+
+.homepage .header .wrapper .border_icon {
+    rotate: 0;
+    transition: 2s;
+    position: absolute;
+    right: -5.5px;
+    top: -8px;
+    opacity: 0;
+}
+
+.homepage .content {
+    width: 100%;
+    height: calc(100% - 108px);
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.homepage .content::-webkit-scrollbar {
+    display: none;
+}
+
+.homepage .content .page {
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.homepage .content .page1 .container {
+    position: absolute;
+    translate: 0 -50%;
+    top: calc(50% - 85px);
+    left: 148px;
+}
+
+.homepage .content h1 {
+    display: inline-block;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 57px;
+    line-height: 64px;
+    letter-spacing: -0.0025em;
+    color: var(--text-title-default);
+}
+
+.homepage .content p {
+    display: inline-block;
+    margin-top: 40px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+    color: var(--text-paragraph);
+}
+.homepage .text{
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.5s;
+    padding: 16px;
+    width: 633.3px;
+    border: 1px solid transparent;
+}
+.homepage .text h1{
+    transition: 0.5s;
+}
+.homepage .text:hover h1{
+    color: var(--text-cta);
+}
+.homepage .text:hover{
+    border: 1px solid var(--accent);
+}
+.homepage .content .page1 button{
+    margin-top: 40px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.001em;
+    color: var(--white100);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 133px;
+    height: 40px;
+    background: var(--accent);
+    backdrop-filter: blur(2px);
+    border-radius: 128px;
+    transition: all 0.5s;
+}
+.homepage .content .page1 button:nth-child(1):hover{
+    opacity: 0;
+}
+.homepage .button{
+    position: relative;
+    display: inline;
+}
+.homepage .content .page1 button:nth-child(2){
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0px;
+    box-sizing: border-box;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid transparent;
+    background: linear-gradient( var(--background) 0 0) padding-box,
+    linear-gradient(-45deg,var(--accent) 40%, var(--cyanA200) 100%) border-box;
+}
+
+.homepage .content .image {
+    width: 319px;
+    height: 519px;
+    position: absolute;
+    right: 156px;
+    translate: 0 -50%;
+    top: calc(50% - 50px);
+}
+.homepage .content .page2 .image{
+    right: 8px;
+    height: 300px;
+    width: 450px;
+    top: calc(50% - 80px);
+    background-size: 130%;
+    background-position: -50px -90px;
+    background-image: url('../img/index/page2/img.jpg');
+}
+.homepage .content .page1 .page-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.homepage .page2 .container {
+    position: absolute;
+    translate: 0 -50%;
+    top: calc(50% - 20px);
+    width: calc(100% - 148px - 148px);
+    margin-left: 148px;
+}
+.homepage .page2 p{
+    margin-top: 20px;
+}
+.homepage .box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.homepage .box:only-child {
+    width: 100%;
+}
+
+.homepage .box .bottom {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.001em;
+    color: var(--text-cta);
+}
+
+.homepage .box .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage .page2 .box .top div {
+    padding: 16px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 28px;
+    transition: 0.5s;
+    cursor: pointer;
+    color: var(--text-title-default);
+}
+.homepage .page2 .box .top div:hover{
+    color:  var(--text-cta);
+}
