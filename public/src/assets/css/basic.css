@@ -4,7 +4,6 @@
     margin: 0;
 }
 body{
-    min-width: 1440px;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
     scrollbar-width: none;
