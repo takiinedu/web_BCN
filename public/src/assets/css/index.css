@@ -156,6 +156,7 @@ body::-webkit-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
+
     scroll-snap-type: y mandatory;
 }
 
@@ -187,7 +188,12 @@ body::-webkit-scrollbar {
     letter-spacing: -0.0025em;
     color: var(--text-title-default);
 }
-
+.homepage .content .page2 h1{
+    font-size: 45rem;
+}
+.homepage .content .page2 p{
+    font-size: 16rem;
+}
 .homepage .content p {
     display: inline-block;
     margin-top: 40rem;
@@ -200,11 +206,13 @@ body::-webkit-scrollbar {
     color: var(--text-paragraph);
 }
 .homepage .text{
+    margin-bottom: 20rem;
+    width: 630rem;
     cursor: pointer;
     border-radius: 15rem;
     transition: 0.5s;
     padding: 16rem;
-    width: 633.3rem;
+    display: inline-block;
     border: 1rem solid transparent;
 }
 .homepage .text h1{
@@ -267,7 +275,7 @@ body::-webkit-scrollbar {
 .homepage .content .page2 .image{
     right: 8rem;
     height: 300rem;
-    width: 450rem;
+    width: 500rem;
     top: calc(50% - 80rem);
     background-size: 130%;
     background-position: -50rem -90rem;
@@ -283,12 +291,12 @@ body::-webkit-scrollbar {
 .homepage .page2 .container {
     position: absolute;
     translate: 0 -50%;
-    top: calc(50% - 20rem);
+    top: calc(50% - 10rem);
     width: calc(100% - 148rem - 148rem);
     margin-left: 148rem;
 }
 .homepage .page2 p{
-    margin-top: 20rem;
+    margin-top: 5rem;
 }
 .homepage .box {
     width: 100%;
@@ -318,11 +326,13 @@ body::-webkit-scrollbar {
 }
 
 .homepage .page2 .box .top div {
+    width: 300rem;
+    text-align: center;
     padding: 16rem;
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 300;
-    font-size: 22rem;
+    font-size: 16rem;
     line-height: 28rem;
     transition: 0.5s;
     cursor: pointer;
