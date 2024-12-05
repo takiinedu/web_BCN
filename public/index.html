@@ -13,6 +13,19 @@
 
 <body>
   <div class="homepage">
+    <div class="scroll-index">
+      <button id="index1" class="index active">1 <br>
+        <div class="index__border"></div>
+      </button>
+      <br>
+      <button id="index2" class="index">2 <br>
+        <div class="index__border"></div>
+      </button>
+      <br>
+      <button id="index3" class="index">3 <br>
+        <div class="index__border"></div>
+      </button>
+    </div>
     <header class="header">
       <div class="wrapper">
         <div class="logo"></div>
@@ -104,22 +117,36 @@
       </div>
     </div>
   </div>
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Ngừng hành động mặc định
-
-        const targetId = this.getAttribute('href').substring(1); // Lấy id mục tiêu
-        const targetElement = document.getElementById(targetId);
-
-        targetElement.scrollIntoView({
-          behavior: 'smooth', // Cuộn mượt
-          block: 'start' // Đảm bảo phần tử được cuộn về đầu trang
+    <script>
+      const pages = document.getElementsByClassName('page');
+      let mouseIn = true;
+      Array.from(pages).forEach(element=>{
+        element.addEventListener('mouseover',()=>{
+          if(mouseIn){
+            const indexs = document.getElementsByClassName('index');
+            Array.from(indexs).forEach(index=>{
+              index.classList.remove('active');
+            });
+            document.getElementById(element.id.replace('page','index')).classList.add('active');
+          }
         });
       });
-    });
-  </script>
-  <div class="body-bg"></div>
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault(); // Ngừng hành động mặc định
+
+          const targetId = this.getAttribute('href').substring(1); // Lấy id mục tiêu
+          const targetElement = document.getElementById(targetId);
+
+          targetElement.scrollIntoView({
+            behavior: 'smooth', // Cuộn mượt
+            block: 'start' // Đảm bảo phần tử được cuộn về đầu trang
+          });
+        });
+      });
+    </script>
+    <div class="body-bg"></div>
 </body>
 
 </html>

@@ -8,8 +8,6 @@ html{
     user-select: none;
 }
 body{
-    overflow-y: hidden;
-    overflow-x: scroll;
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -42,10 +40,12 @@ body::-webkit-scrollbar {
 }
 .body-bg{
     position: fixed;
+    top: 0;
     width: calc(100% + (100vh / 778 * 1440));
     background-color: #eae9ee;
     height: 100vh;
     z-index: -2;
+    left: 0;
 }
 .homepage .header{
     width: 100%;
@@ -340,4 +340,41 @@ body::-webkit-scrollbar {
 }
 .homepage .page2 .box .top div:hover{
     color:  var(--text-cta);
+}
+.homepage .scroll-index *{
+    transition: 0.2s linear;
+}
+.homepage .scroll-index {
+    position: fixed;
+    right: 20rem;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.homepage .scroll-index .index {
+    width: 10px;
+    text-align: center;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22rem;
+    line-height: 28rem;
+    color: #424242;
+    position: relative;
+    background: transparent;
+    border: none;
+}
+
+.homepage .scroll-index .active {
+    font-size: 24rem;
+    font-weight: 600;
+    font-size: 24rem;
+    color: #00838F;
+}
+
+.homepage .scroll-index .active .index__border {
+    height: 120rem;
+    width: 1rem;
+    background: #00838F;
+    margin: auto;
 }
