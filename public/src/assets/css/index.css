@@ -525,7 +525,10 @@ body::-webkit-scrollbar {
     background: transparent;
     border: none;
 }
-
+.homepage .scroll-index .index .index__border{
+    background: #00838F;
+    margin: 5.5rem;
+}
 .homepage .scroll-index .active {
     font-size: 24rem;
     font-weight: 600;
@@ -536,6 +539,4 @@ body::-webkit-scrollbar {
 .homepage .scroll-index .active .index__border {
     height: 120rem;
     width: 1rem;
-    background: #00838F;
-    margin: 5.5rem;
 }
