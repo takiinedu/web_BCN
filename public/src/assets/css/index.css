@@ -1,44 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Londrina+Outline&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=VT323&display=swap');
-html{
+
+html {
     font-size: calc(100vh / 778);
 }
-*{
+
+* {
     padding: 0;
     margin: 0;
     user-select: none;
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
     position: relative;
     display: flex;
     justify-content: center;
 }
+
 body {
-    overflow: auto; /* Cho phép cuộn */
-    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
-    -ms-overflow-style: none; /* Ẩn thanh cuộn trên Internet Explorer */
+    overflow: auto;
+    /* Cho phép cuộn */
+    scrollbar-width: none;
+    /* Ẩn thanh cuộn trên Firefox */
+    -ms-overflow-style: none;
+    /* Ẩn thanh cuộn trên Internet Explorer */
 }
 
 body::-webkit-scrollbar {
-    display: none; /* Ẩn thanh cuộn trên Chrome, Safari */
+    display: none;
+    /* Ẩn thanh cuộn trên Chrome, Safari */
 }
 
-.homepage{
+.homepage {
     position: absolute;
     width: 1440rem;
     height: 100vh;
 }
-@media screen and (max-width: calc(100vh / 778 * 1440)){
-    .homepage{
+
+@media screen and (max-width: calc(100vh / 778 * 1440)) {
+    .homepage {
         left: 0;
         translate: 0 0;
     }
-    html{
-            font-size: calc(100vw / 1440);
-        }
+
+    html {
+        font-size: calc(100vw / 1440);
+    }
 }
-.body-bg{
+
+.body-bg {
     position: fixed;
     top: 0;
     width: calc(100% + (100vh / 778 * 1440));
@@ -47,24 +58,28 @@ body::-webkit-scrollbar {
     z-index: -2;
     left: 0;
 }
-.homepage .header{
+
+.homepage .header {
     width: 100%;
     height: 108rem;
     display: flex;
 }
-.homepage .header .wrapper{
+
+.homepage .header .wrapper {
     align-items: center;
     justify-content: space-between;
     display: flex;
     width: calc(100% - 64rem);
     margin: auto;
 }
-.homepage .header .logo{
+
+.homepage .header .logo {
     width: 69rem;
     height: 69rem;
     background-color: #D9D9D9;
     border-radius: 50%;
 }
+
 .homepage .header .nav {
     display: flex;
     gap: 24rem;
@@ -91,18 +106,22 @@ body::-webkit-scrollbar {
     letter-spacing: 0.001em;
     color: #424242;
 }
-.homepage .header .nav a:hover{
+
+.homepage .header .nav a:hover {
     color: #00838F;
 }
-.homepage .header .right{
+
+.homepage .header .right {
     display: flex;
     align-items: center;
     gap: 16rem;
 }
-.homepage .header .search-box{
+
+.homepage .header .search-box {
     position: relative;
 }
-.homepage .header .search-box input{
+
+.homepage .header .search-box input {
     width: 329rem;
     box-sizing: border-box;
     height: 48rem;
@@ -119,36 +138,42 @@ body::-webkit-scrollbar {
     letter-spacing: 0.001em;
     color: #424242;
 }
-.homepage .header .seacrh-icon svg{
+
+.homepage .header .seacrh-icon svg {
     width: 17rem;
     height: 17rem;
     position: absolute;
     right: 16rem;
     top: 16rem;
 }
-.homepage .header .avatar, .homepage .header .avatar *{
+
+.homepage .header .avatar,
+.homepage .header .avatar * {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.homepage .header .avatar{
+
+.homepage .header .avatar {
     width: 64rem;
     height: 64rem;
     border: 1rem #fff solid;
     border-radius: 50%;
 }
-.homepage .header .avatar .avatar__in{
+
+.homepage .header .avatar .avatar__in {
     width: 60rem;
     height: 60rem;
     border: 1rem #fff solid;
     border-radius: 50%;
 }
-.homepage .header .avatar .avatar__in .icon{
+
+.homepage .header .avatar .avatar__in .icon {
     width: 17rem;
     height: 17rem;
 }
 
-.homepage .content {
+.homepage .container {
     width: 100%;
     height: calc(100vh - 108rem);
     overflow: hidden;
@@ -160,25 +185,25 @@ body::-webkit-scrollbar {
     scroll-snap-type: y mandatory;
 }
 
-.homepage .content::-webkit-scrollbar {
+.homepage .container::-webkit-scrollbar {
     display: none;
 }
 
-.homepage .content .page {
+.homepage .container .page {
     scroll-snap-align: start;
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.homepage .content .page1 .container {
+.homepage .container .page1 .content {
     position: absolute;
     translate: 0 -50%;
     top: calc(50% - 85rem);
     left: 148rem;
 }
 
-.homepage .content h1 {
+.homepage .container h1 {
     display: inline-block;
     font-family: 'Quicksand';
     font-style: normal;
@@ -188,13 +213,16 @@ body::-webkit-scrollbar {
     letter-spacing: -0.0025em;
     color: var(--text-title-default);
 }
-.homepage .content .page2 h1{
+
+.homepage .container .page2 h1 {
     font-size: 45rem;
 }
-.homepage .content .page2 p{
+
+.homepage .container .page2 p {
     font-size: 16rem;
 }
-.homepage .content p {
+
+.homepage .container p {
     display: inline-block;
     margin-top: 40rem;
     font-family: 'Quicksand';
@@ -205,7 +233,8 @@ body::-webkit-scrollbar {
     letter-spacing: 0.005em;
     color: var(--text-paragraph);
 }
-.homepage .text{
+
+.homepage .page2 .text {
     margin-bottom: 20rem;
     width: 630rem;
     cursor: pointer;
@@ -215,16 +244,20 @@ body::-webkit-scrollbar {
     display: inline-block;
     border: 1rem solid transparent;
 }
-.homepage .text h1{
+
+.homepage .page2 .text h1 {
     transition: 0.5s;
 }
-.homepage .text:hover h1{
+
+.homepage .page2 .text:hover h1 {
     color: var(--text-cta);
 }
-.homepage .text:hover{
+
+.homepage .page2 .text:hover {
     border: 1rem solid var(--accent);
 }
-.homepage .content .page1 button{
+
+.homepage .container .page1 button {
     margin-top: 40rem;
     font-family: 'Quicksand';
     font-style: normal;
@@ -244,14 +277,17 @@ body::-webkit-scrollbar {
     border-radius: 128rem;
     transition: all 0.5s;
 }
-.homepage .content .page1 button:nth-child(1):hover{
+
+.homepage .container .page1 button:nth-child(1):hover {
     opacity: 0;
 }
-.homepage .button{
+
+.homepage .button {
     position: relative;
     display: inline;
 }
-.homepage .content .page1 button:nth-child(2){
+
+.homepage .container .page1 button:nth-child(2) {
     position: absolute;
     z-index: -2;
     top: 0;
@@ -260,11 +296,11 @@ body::-webkit-scrollbar {
     color: var(--accent);
     background: transparent;
     border: 1rem solid transparent;
-    background: linear-gradient( var(--background) 0 0) padding-box,
-    linear-gradient(-45deg,var(--accent) 40%, var(--cyanA200) 100%) border-box;
+    background: linear-gradient(var(--background) 0 0) padding-box,
+        linear-gradient(-45deg, var(--accent) 40%, var(--cyanA200) 100%) border-box;
 }
 
-.homepage .content .image {
+.homepage .container .image {
     width: 319rem;
     height: 519rem;
     position: absolute;
@@ -272,7 +308,8 @@ body::-webkit-scrollbar {
     translate: 0 -50%;
     top: calc(50% - 50rem);
 }
-.homepage .content .page2 .image{
+
+.homepage .container .page2 .image {
     right: 8rem;
     height: 300rem;
     width: 500rem;
@@ -281,23 +318,26 @@ body::-webkit-scrollbar {
     background-position: -50rem -90rem;
     background-image: url('../img/index/page2/img.jpg');
 }
-.homepage .content .page1 .page-footer {
+
+.homepage .container .page1 .page-footer {
     width: 100%;
     position: absolute;
     bottom: 10rem;
     left: 0;
 }
 
-.homepage .page2 .container {
+.homepage .page2 .content {
     position: absolute;
     translate: 0 -50%;
     top: calc(50% - 10rem);
     width: calc(100% - 148rem - 148rem);
     margin-left: 148rem;
 }
-.homepage .page2 p{
+
+.homepage .page2 p {
     margin-top: 5rem;
 }
+
 .homepage .box {
     width: 100%;
     margin-top: 20rem;
@@ -338,12 +378,133 @@ body::-webkit-scrollbar {
     cursor: pointer;
     color: var(--text-title-default);
 }
-.homepage .page2 .box .top div:hover{
-    color:  var(--text-cta);
+
+.homepage .page2 .box .top div:hover {
+    color: var(--text-cta);
 }
-.homepage .scroll-index *{
+
+.homepage .page3 .content {
+    height: 520rem;
+    position: absolute;
+    top: calc(50% - 70rem);
+    translate: 0 -50%;
+    left: 148rem;
+    width: calc(100% - 148rem - 148rem);
+
+}
+
+.homepage .page3 .content h1 {
+    text-align: center;
+    padding-top: 44rem;
+    width: 516rem;
+    height: 52rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 45rem;
+    line-height: 52rem;
+    color: #424242;
+}
+
+.homepage .page3 .content p {
+    text-align: center;
+    margin-top: 28rem;
+    width: 516rem;
+    height: 168rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16rem;
+    line-height: 24rem;
+    letter-spacing: 0.005em;
+    color: #424242;
+}
+
+.homepage .page3 .images {
+    width: 796rem;
+    position: absolute;
+    height: 539rem;
+    right: 0;
+    top: 0;
+}
+
+.homepage .page3 .img1 {
+    position: absolute;
+    top: 0;
+    right: 75rem;
+    width: 500rem;
+    height: 322rem;
+}
+
+.homepage .page3 .img2 {
+    position: absolute;
+    top: 205rem;
+    right: 0;
+    width: 351rem;
+    height: 253rem;
+}
+
+.homepage .page3 .img3 {
+    position: absolute;
+    bottom: 0;
+    right: 159rem;
+    width: 351rem;
+    height: 253rem;
+}
+
+.homepage .page3 .img4 {
+    width: 240rem;
+    height: 117rem;
+}
+
+.homepage .page3 .box {
+    top: 335rem;
+    right: 231rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 56rem;
+}
+
+.homepage .page3 .box a {
+    width: 191rem;
+    height: 28rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22rem;
+    line-height: 28rem;
+    text-decoration-line: underline;
+    color: #00838F;
+}
+
+.homepage .page3 .images h3 {
+    position: absolute;
+    right: 578rem;
+    bottom: 30rem;
+    text-align: center;
+    width: 164rem;
+    height: 20rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 20rem;
+    letter-spacing: 0.001em;
+    color: #424242;
+}
+
+.homepage .container .page3 .page-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 10rem;
+    left: 0;
+}
+
+.homepage .scroll-index * {
     transition: 0.2s linear;
 }
+
 .homepage .scroll-index {
     position: fixed;
     right: 20rem;
@@ -352,7 +513,7 @@ body::-webkit-scrollbar {
 }
 
 .homepage .scroll-index .index {
-    width: 10px;
+    width: 10rem;
     text-align: center;
     font-family: 'Quicksand';
     font-style: normal;
@@ -376,5 +537,5 @@ body::-webkit-scrollbar {
     height: 120rem;
     width: 1rem;
     background: #00838F;
-    margin: auto;
+    margin: 5.5rem;
 }

@@ -64,9 +64,9 @@
         </div>
       </div>
     </header>
-    <div class="content">
+    <div class="container">
       <div id="page1" class="page page1">
-        <div class="container">
+        <div class="content">
           <h1>Muốn trở thành thành <br> viên Ban Công Nghệ?</h1>
           <br>
           <p>Bạn đang tìm kiếm những giải pháp công nghệ đột phá, sáng tạo và hiệu quả? Chúng tôi <br> luôn sẵn sàng
@@ -84,7 +84,7 @@
         <img class="page-footer" src="./src/assets/img/index/page1/footer/Footer.png">
       </div>
       <div id="page2" class="page page2">
-        <div class="container">
+        <div class="content">
           <div class="text">
             <h1>Tuyển cộng tác viên ban công nghệ</h1>
             <br>
@@ -117,22 +117,33 @@
       </div>
 
       <div id="page3" class="page page3">
+        <div class="content">
+          <div class="text">
+            <h1>BAN CÔNG NGHỆ</h1>
+            <br>
+            <p>Ban Công Nghệ Sinh Viên IT thuộc Đoàn Khoa Công Nghệ Thông Tin là nơi kết nối các bạn sinh viên đam mê
+              công nghệ. Chúng tôi tập trung vào việc phát triển phần mềm, tổ chức các hoạt động đào tạo kỹ năng IT, và
+              tạo ra một cộng đồng học hỏi, hợp tác. Với mục tiêu giúp sinh viên nâng cao kỹ năng công nghệ, tham gia
+              các dự án thực tế và phát triển nghề nghiệp, Ban Công Nghệ luôn chào đón những bạn trẻ nhiệt huyết gia
+              nhập để cùng nhau sáng tạo và học hỏi.</p>
+          </div>
+          <div class="images">
+            <h3>Giới thiệu ban công nghệ</h3>
+            <img class="img3" src="./src/assets/img/index/page3/img3.png" alt="" srcset="">
+            <img class="img2" src="./src/assets/img/index/page3/img2.png" alt="" srcset="">
+            <img class="img1" src="./src/assets/img/index/page3/img1.png" alt="" srcset="">
+            <div class="box">
+              <a href="#">Đăng kí thành viên</a>
+              <img class="img4" src="./src/assets/img/index/page3/img4.png" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+        <img class="page-footer" src="./src/assets/img/index/page1/footer/Footer.png">
       </div>
-
     </div>
   </div>
   <script>
-    // const pages = document.getElementsByClassName('page');
-    // Array.from(pages).forEach(element => {
-    //   element.addEventListener('mouseover', () => {
-    //     const indexs = document.getElementsByClassName('index');
-    //     Array.from(indexs).forEach(index => {
-    //       index.classList.remove('active');
-    //     });
-    //     document.getElementById(element.id.replace('page', 'index')).classList.add('active');
-    //   });
-    // });
-    const container = document.querySelector(".content"); // Chọn phần tử theo class
+    const container = document.querySelector(".container"); // Chọn phần tử theo class
     const pages = document.querySelectorAll(".page");
     let currentPage = ""; // Biến lưu trạng thái page hiện tại
 
@@ -160,11 +171,6 @@
         document.getElementById(element.id.replace('page', 'index')).classList.add('active');
       }
     });
-
-
-
-
-
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
