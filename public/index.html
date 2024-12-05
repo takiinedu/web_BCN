@@ -115,38 +115,72 @@
           </div>
         </div>
       </div>
+
+      <div id="page3" class="page page3">
+      </div>
+
     </div>
   </div>
-    <script>
-      const pages = document.getElementsByClassName('page');
-      let mouseIn = true;
-      Array.from(pages).forEach(element=>{
-        element.addEventListener('mouseover',()=>{
-          if(mouseIn){
-            const indexs = document.getElementsByClassName('index');
-            Array.from(indexs).forEach(index=>{
-              index.classList.remove('active');
-            });
-            document.getElementById(element.id.replace('page','index')).classList.add('active');
-          }
-        });
+  <script>
+    // const pages = document.getElementsByClassName('page');
+    // Array.from(pages).forEach(element => {
+    //   element.addEventListener('mouseover', () => {
+    //     const indexs = document.getElementsByClassName('index');
+    //     Array.from(indexs).forEach(index => {
+    //       index.classList.remove('active');
+    //     });
+    //     document.getElementById(element.id.replace('page', 'index')).classList.add('active');
+    //   });
+    // });
+    const container = document.querySelector(".content"); // Chọn phần tử theo class
+    const pages = document.querySelectorAll(".page");
+    let currentPage = ""; // Biến lưu trạng thái page hiện tại
+
+    container.addEventListener("scroll", () => {
+      let foundPage = null;
+
+      pages.forEach(page => {
+        const rect = page.getBoundingClientRect();
+        // Kiểm tra nếu phần lớn của phần tử nằm trong viewport
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+          foundPage = page.id;
+
+        }
       });
 
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault(); // Ngừng hành động mặc định
+      // In ra console khi phát hiện page mới
+      if (foundPage && foundPage !== currentPage) {
+        currentPage = foundPage;
 
-          const targetId = this.getAttribute('href').substring(1); // Lấy id mục tiêu
-          const targetElement = document.getElementById(targetId);
+        const element = document.getElementById(currentPage);
+        const indexs = document.getElementsByClassName('index');
+        Array.from(indexs).forEach(index => {
+          index.classList.remove('active');
+        });
+        document.getElementById(element.id.replace('page', 'index')).classList.add('active');
+      }
+    });
 
-          targetElement.scrollIntoView({
-            behavior: 'smooth', // Cuộn mượt
-            block: 'start' // Đảm bảo phần tử được cuộn về đầu trang
-          });
+
+
+
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Ngừng hành động mặc định
+
+        const targetId = this.getAttribute('href').substring(1); // Lấy id mục tiêu
+        const targetElement = document.getElementById(targetId);
+
+        targetElement.scrollIntoView({
+          behavior: 'smooth', // Cuộn mượt
+          block: 'start' // Đảm bảo phần tử được cuộn về đầu trang
         });
       });
-    </script>
-    <div class="body-bg"></div>
+    });
+  </script>
+  <div class="body-bg"></div>
 </body>
 
 </html>
