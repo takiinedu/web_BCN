@@ -16,23 +16,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    overflow: hidden;
 }
-
-body {
-    overflow: auto;
-    /* Cho phép cuộn */
-    scrollbar-width: none;
-    /* Ẩn thanh cuộn trên Firefox */
-    -ms-overflow-style: none;
-    /* Ẩn thanh cuộn trên Internet Explorer */
-}
-
-body::-webkit-scrollbar {
-    display: none;
-    /* Ẩn thanh cuộn trên Chrome, Safari */
-}
-
 .homepage {
     position: absolute;
     width: 1440rem;
