@@ -47,7 +47,7 @@
               </svg>
             </div>
           </div>
-          <div class="avatar">
+          <div class="avatar" onclick="showSignin()">
             <div class="avatar__in">
               <div class="icon">
                 <svg viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,78 +115,12 @@
           </div>
         </div>
       </div>
-
-      <div id="page3" class="page page3">
-        <div class="content">
-          <div class="text">
-            <h1>BAN CÔNG NGHỆ</h1>
-            <br>
-            <p>Ban Công Nghệ Sinh Viên IT thuộc Đoàn Khoa Công Nghệ Thông Tin là nơi kết nối các bạn sinh viên đam mê
-              công nghệ. Chúng tôi tập trung vào việc phát triển phần mềm, tổ chức các hoạt động đào tạo kỹ năng IT, và
-              tạo ra một cộng đồng học hỏi, hợp tác. Với mục tiêu giúp sinh viên nâng cao kỹ năng công nghệ, tham gia
-              các dự án thực tế và phát triển nghề nghiệp, Ban Công Nghệ luôn chào đón những bạn trẻ nhiệt huyết gia
-              nhập để cùng nhau sáng tạo và học hỏi.</p>
-          </div>
-          <div class="images">
-            <h3>Giới thiệu ban công nghệ</h3>
-            <img class="img3" src="./src/assets/img/index/page3/img3.png" alt="" srcset="">
-            <img class="img2" src="./src/assets/img/index/page3/img2.png" alt="" srcset="">
-            <img class="img1" src="./src/assets/img/index/page3/img1.png" alt="" srcset="">
-            <div class="box">
-              <a href="#">Đăng kí thành viên</a>
-              <img class="img4" src="./src/assets/img/index/page3/img4.png" alt="" srcset="">
-            </div>
-          </div>
-        </div>
-        <img class="page-footer" src="./src/assets/img/index/page1/footer/Footer.png">
-      </div>
     </div>
   </div>
-  <script>
-    const container = document.querySelector(".container"); // Chọn phần tử theo class
-    const pages = document.querySelectorAll(".page");
-    let currentPage = ""; // Biến lưu trạng thái page hiện tại
-
-    container.addEventListener("scroll", () => {
-      let foundPage = null;
-
-      pages.forEach(page => {
-        const rect = page.getBoundingClientRect();
-        // Kiểm tra nếu phần lớn của phần tử nằm trong viewport
-        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-          foundPage = page.id;
-
-        }
-      });
-
-      // In ra console khi phát hiện page mới
-      if (foundPage && foundPage !== currentPage) {
-        currentPage = foundPage;
-
-        const element = document.getElementById(currentPage);
-        const indexs = document.getElementsByClassName('index');
-        Array.from(indexs).forEach(index => {
-          index.classList.remove('active');
-        });
-        document.getElementById(element.id.replace('page', 'index')).classList.add('active');
-      }
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Ngừng hành động mặc định
-
-        const targetId = this.getAttribute('href').substring(1); // Lấy id mục tiêu
-        const targetElement = document.getElementById(targetId);
-
-        targetElement.scrollIntoView({
-          behavior: 'smooth', // Cuộn mượt
-          block: 'start' // Đảm bảo phần tử được cuộn về đầu trang
-        });
-      });
-    });
-  </script>
   <div class="body-bg"></div>
+  <script type = "module" src="./src/assets/js/checkLogin.js"></script>
+  <script src="./src/assets/js/main.js"></script>
+  <script src="./src/assets/js/homepage.js"></script>
 </body>
 
 </html>
