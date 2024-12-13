@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 // Khởi tạo auth
 const auth = getAuth(app);
 
-// Kiểm tra trạng thái đăng nhập
+// Hàm kiểm tra trạng thái đăng nhập
 function checkLoginStatus() {
   // Lấy thông tin đăng nhập từ localStorage
   const userEmail = localStorage.getItem("userEmail");
@@ -35,7 +35,7 @@ function checkLoginStatus() {
   // Kiểm tra nếu thời gian đăng nhập đã quá 15 phút
   const currentTime = new Date().getTime();
   const elapsedTime = currentTime - parseInt(loginTime);
-  const fifteenMinutesInMs = 5 * 60 * 1000; // 15 phút tính bằng mili giây
+  const fifteenMinutesInMs = 15 * 60 * 1000; // 15 phút tính bằng mili giây
 
   if (elapsedTime > fifteenMinutesInMs) {
     // Nếu đã quá 15 phút, xóa các mục trong localStorage và thông báo
@@ -47,17 +47,12 @@ function checkLoginStatus() {
     return;
   }
 
-  // Tính thời gian còn lại để đăng xuất
-  const remainingTime = fifteenMinutesInMs - elapsedTime;
-  const minutesLeft = Math.floor(remainingTime / 60000); // Số phút còn lại
-  const secondsLeft = Math.floor((remainingTime % 60000) / 1000); // Số giây còn lại
-
-  // In ra thông báo về thời gian còn lại
-  console.log(`Sẽ tự động đăng xuất sau: ${minutesLeft} phút ${secondsLeft} giây`);
-
   // Hiển thị thời gian còn lại trên giao diện (nếu cần)
   const countdownElement = document.getElementById('countdown'); // Giả sử bạn có một phần tử với id 'countdown'
   if (countdownElement) {
+    const remainingTime = fifteenMinutesInMs - elapsedTime;
+    const minutesLeft = Math.floor(remainingTime / 60000); // Số phút còn lại
+    const secondsLeft = Math.floor((remainingTime % 60000) / 1000); // Số giây còn lại
     countdownElement.innerText = `Sẽ tự động đăng xuất sau: ${minutesLeft} phút ${secondsLeft} giây`;
   }
 
@@ -70,24 +65,20 @@ function checkLoginStatus() {
         console.log(`Email: ${userEmail}`);
         console.log(`UID: ${userUid}`);
 
+        // Sử dụng Public ID trực tiếp hoặc logic tạo Public ID
+        const publicId = `A${userUid}.jpg`; // Tạo Public ID dựa trên UID
+        const imageUrl = `https://res.cloudinary.com/dja3ehblp/image/upload/${publicId}`;
 
-        // Tạo URL của ảnh trên Cloudinary
-        const imageName = userEmail.replace("@gmail.com", "");
-        const cloudinaryImageName = "A" + imageName + ".jpg"; 
-        const imageUrl = `https://res.cloudinary.com/dja3ehblp/image/upload/${cloudinaryImageName}`;
-
-        console.log(`Tên ảnh trên Cloudinary: ${cloudinaryImageName}`);
+        console.log(`Public ID: ${publicId}`);
         console.log(`URL ảnh: ${imageUrl}`);
 
+        // Cập nhật ảnh đại diện
         const avatarElement = document.querySelector('.avatar');
-        avatarElement.onclick = null;
         if (avatarElement) {
-          // Xoá tất cả phần tử con của nó
+          // Xóa tất cả phần tử con và cập nhật nền
           while (avatarElement.firstChild) {
             avatarElement.removeChild(avatarElement.firstChild);
           }
-
-          // Thay nền của phần tử với ảnh từ Cloudinary
           avatarElement.style.backgroundImage = `url(${imageUrl})`;
           avatarElement.style.backgroundSize = 'cover';
           avatarElement.style.backgroundPosition = 'center';
@@ -108,7 +99,6 @@ function checkLoginStatus() {
       localStorage.removeItem("userUid");
       localStorage.removeItem("loginTime");
       console.log("Chưa đăng nhập");
-
     }
   });
 }
