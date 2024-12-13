@@ -66,7 +66,7 @@ function checkLoginStatus() {
         console.log(`UID: ${userUid}`);
 
         // Sử dụng Public ID trực tiếp hoặc logic tạo Public ID
-        const publicId = `A${userUid}.jpg`; // Tạo Public ID dựa trên UID
+        const publicId = `A${userEmail.replace('@gmail.com', '')}.jpg`; // Tạo Public ID dựa trên email
         const imageUrl = `https://res.cloudinary.com/dja3ehblp/image/upload/${publicId}`;
 
         console.log(`Public ID: ${publicId}`);
