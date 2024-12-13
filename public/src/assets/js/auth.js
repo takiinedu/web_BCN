@@ -1,8 +1,6 @@
-// Import các hàm cần thiết từ Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
-// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBEYTw6TCZHC0IV3lIAEfkTAte-JHf6cJs",
   authDomain: "webbcn-3b6f6.firebaseapp.com",
@@ -13,31 +11,34 @@ const firebaseConfig = {
   measurementId: "G-PP830PMJ5K"
 };
 
-// Khởi tạo Firebase app
 const app = initializeApp(firebaseConfig);
-
-// Khởi tạo auth
 const auth = getAuth(app);
 
-// Handle login form submission
 document.getElementById("login_button").addEventListener("click", async (event) => {
   event.preventDefault();
-
-  const email = document.getElementById("user").value + "@gmail.com"; // Thêm @gmail.com vào email
+  const email = `${document.getElementById("user").value}@gmail.com`;
   const password = document.getElementById("pass").value;
 
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Lấy email và xóa @gmail.com, sau đó thêm .jpg
-
-    // Lưu avatar URL vào localStorage
     localStorage.setItem("userEmail", user.email);
     localStorage.setItem("userUid", user.uid);
     localStorage.setItem("loginTime", new Date().getTime());
+
+    if (document.getElementById("remember").checked) {
+      localStorage.setItem("User", document.getElementById("user").value);
+      localStorage.setItem("Pass", password);
+    } else {
+      localStorage.removeItem("User");
+      localStorage.removeItem("Pass");
+    }
+
     window.location.reload();
   } catch (error) {
-    alert(`Lỗi: ${error.message}`);
+    localStorage.removeItem("User");
+    localStorage.removeItem("Pass");
+    alert("Đăng nhập không thành công!");
   }
 });

@@ -3,35 +3,22 @@ const pages = document.querySelectorAll(".page");
 let currentPage = "";
 
 container.addEventListener("scroll", () => {
-    let foundPage = null;
-
-    pages.forEach(page => {
+    let foundPage = Array.from(pages).find(page => {
         const rect = page.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-            foundPage = page.id;
-        }
-    });
+        return rect.top >= 0 && rect.top < window.innerHeight / 2;
+    })?.id;
 
     if (foundPage && foundPage !== currentPage) {
         currentPage = foundPage;
-        console.log(currentPage);
-        const element = document.getElementById(currentPage);
-        const indexs = document.getElementsByClassName('index');
-        Array.from(indexs).forEach(index => {
-            index.classList.remove('active');
-        });
-        document.getElementById(element.id.replace('page', 'index')).classList.add('active');
+        document.querySelectorAll('.index').forEach(index => index.classList.remove('active'));
+        document.getElementById(currentPage.replace('page', 'index')).classList.add('active');
     }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        targetElement.scrollIntoView({
+        document.getElementById(this.getAttribute('href').substring(1)).scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });

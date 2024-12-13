@@ -58,7 +58,7 @@
             position: relative;
         }
     
-        #sign-in .box .right input[type="text"] {
+        #sign-in .box .right input[type="text"] , #sign-in .box .right input[type="password"] {
             box-sizing: border-box;
             outline: none;
             width: 434rem;
@@ -201,7 +201,7 @@
     </style>
     <div class="box">
         <img src="./src/assets/img/login/image.png" alt="">
-        <div class="right">
+        <form class="right">
             <h1>ĐĂNG NHẬP</h1>
             <br>
             <div class="div" id="user-box">
@@ -209,7 +209,7 @@
                 <img src="./src/assets/img/login/Icon-pass.png">
             </div>
             <div class="div" id="pass-box">
-                <input id = "pass" type="text" name = "pass" placeholder="Nhập mật khẩu">
+                <input id = "pass" type="password" name = "pass" placeholder="Nhập mật khẩu">
                 <img src="./src/assets/img/login/Icon-pass.png">
             </div>
             <div class="remember">
@@ -221,6 +221,6 @@
                 <div></div>
                 <div></div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
