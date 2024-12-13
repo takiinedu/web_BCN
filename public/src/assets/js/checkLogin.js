@@ -79,6 +79,7 @@ function checkLoginStatus() {
           while (avatarElement.firstChild) {
             avatarElement.removeChild(avatarElement.firstChild);
           }
+          avatarElement.onclick = null;
           avatarElement.style.backgroundImage = `url(${imageUrl})`;
           avatarElement.style.backgroundSize = 'cover';
           avatarElement.style.backgroundPosition = 'center';
