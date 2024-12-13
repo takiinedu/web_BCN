@@ -12,7 +12,7 @@ const firebaseConfig = {
   appId: "1:727862906440:web:2a1354ad161d9b2d99527d",
   measurementId: "G-PP830PMJ5K"
 };
-
+const avatarElement = document.querySelector('.avatar');
 // Khởi tạo Firebase app
 const app = initializeApp(firebaseConfig);
 
@@ -29,6 +29,7 @@ function checkLoginStatus() {
   // Kiểm tra nếu không có thông tin đăng nhập trong localStorage
   if (!userEmail || !userUid || !loginTime) {
     console.log("Chưa đăng nhập");
+    avatarElement.setAttribute('onclick', 'showSignin()');
     return;
   }
 
@@ -55,7 +56,6 @@ function checkLoginStatus() {
     const secondsLeft = Math.floor((remainingTime % 60000) / 1000); // Số giây còn lại
     countdownElement.innerText = `Sẽ tự động đăng xuất sau: ${minutesLeft} phút ${secondsLeft} giây`;
   }
-  let avatarElement = document.querySelector('.avatar');
   // Kiểm tra trạng thái đăng nhập trên Firebase
   onAuthStateChanged(auth, (user) => {
     if (user) {
