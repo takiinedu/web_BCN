@@ -91,7 +91,7 @@ function checkLoginStatus() {
         localStorage.removeItem("loginTime");
         console.log("Thông tin đăng nhập không hợp lệ. Đã xóa dữ liệu.");
         console.log("Chưa đăng nhập");
-        avatarElement.onclick = function() { showSignin(); };
+        avatarElement.setAttribute('onclick', 'showSignin()');
       }
     } else {
       // Nếu người dùng không đăng nhập
@@ -99,7 +99,7 @@ function checkLoginStatus() {
       localStorage.removeItem("userUid");
       localStorage.removeItem("loginTime");
       console.log("Chưa đăng nhập");
-      avatarElement.onclick = function() { showSignin(); };
+      avatarElement.setAttribute('onclick', 'showSignin()');
     }
   });
 }
