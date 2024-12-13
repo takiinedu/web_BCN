@@ -79,7 +79,6 @@ function checkLoginStatus() {
           while (avatarElement.firstChild) {
             avatarElement.removeChild(avatarElement.firstChild);
           }
-          avatarElement.onclick = null;
           avatarElement.style.backgroundImage = `url(${imageUrl})`;
           avatarElement.style.backgroundSize = 'cover';
           avatarElement.style.backgroundPosition = 'center';
@@ -93,6 +92,7 @@ function checkLoginStatus() {
         localStorage.removeItem("loginTime");
         console.log("Thông tin đăng nhập không hợp lệ. Đã xóa dữ liệu.");
         console.log("Chưa đăng nhập");
+        avatarElement.onclick = function() { showSignin(); };
       }
     } else {
       // Nếu người dùng không đăng nhập
@@ -100,6 +100,7 @@ function checkLoginStatus() {
       localStorage.removeItem("userUid");
       localStorage.removeItem("loginTime");
       console.log("Chưa đăng nhập");
+      avatarElement.onclick = function() { showSignin(); };
     }
   });
 }
