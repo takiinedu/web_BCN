@@ -55,7 +55,7 @@ function checkLoginStatus() {
     const secondsLeft = Math.floor((remainingTime % 60000) / 1000); // Số giây còn lại
     countdownElement.innerText = `Sẽ tự động đăng xuất sau: ${minutesLeft} phút ${secondsLeft} giây`;
   }
-
+  let avatarElement = document.querySelector('.avatar');
   // Kiểm tra trạng thái đăng nhập trên Firebase
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -73,7 +73,6 @@ function checkLoginStatus() {
         console.log(`URL ảnh: ${imageUrl}`);
 
         // Cập nhật ảnh đại diện
-        const avatarElement = document.querySelector('.avatar');
         if (avatarElement) {
           // Xóa tất cả phần tử con và cập nhật nền
           while (avatarElement.firstChild) {
